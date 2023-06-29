@@ -55,9 +55,9 @@ public class ProductServiceImpl implements ProductService {
         Product product = productRepository.findById(id).get();
         if (product != null) {
             ProductDetailDtoResponse productDetailDtoResponse = productConverter.entityToProductDetailDto(product);
-            CategoryDtoResponse categoryDtoResponse = categoryConverter.entityToDto(product.getCategory());
+//            CategoryDtoResponse categoryDtoResponse = categoryConverter.entityToDto(product.getCategory());
 
-            productDetailDtoResponse.setCategoryDtoResponse(categoryDtoResponse);
+//            productDetailDtoResponse.setCategoryDtoResponse(categoryDtoResponse);
             return productDetailDtoResponse;
         }
         return null;

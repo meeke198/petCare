@@ -1,7 +1,7 @@
 package com.petCare.service;
 
-import com.petworld.dto.cartDto.request.CartDetailDtoRequest;
-import com.petworld.dto.cartDto.response.CartDetailDtoResponse;
+import com.petCare.dto.cartDto.request.CartDetailDtoRequest;
+import com.petCare.dto.cartDto.response.CartDetailDtoResponse;
 
 import java.util.List;
 

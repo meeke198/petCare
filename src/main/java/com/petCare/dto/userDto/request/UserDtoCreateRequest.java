@@ -1,4 +1,4 @@
-package com.petCare.dto.userDto;
+package com.petCare.dto.userDto.request;
 
 import com.petCare.entity.Role;
 import lombok.AllArgsConstructor;

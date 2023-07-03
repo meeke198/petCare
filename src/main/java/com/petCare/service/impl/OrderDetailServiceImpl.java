@@ -1,9 +1,9 @@
 package com.petCare.service.impl;
 
-import com.petworld.converter.OrderDetailConverter;
-import com.petworld.entity.OrderDetail;
-import com.petworld.repository.OrderDetailRepository;
-import com.petworld.service.OrderDetailService;
+import com.petCare.converter.OrderDetailConverter;
+import com.petCare.entity.OrderDetail;
+import com.petCare.repository.OrderDetailRepository;
+import com.petCare.service.OrderDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

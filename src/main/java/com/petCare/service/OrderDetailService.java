@@ -1,6 +1,6 @@
 package com.petCare.service;
 
-import com.petworld.entity.OrderDetail;
+import com.petCare.entity.OrderDetail;
 
 public interface OrderDetailService {
 

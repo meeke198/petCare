@@ -1,7 +1,7 @@
 package com.petCare.service;
 
-import com.petworld.dto.order.OrdersDtoRequest;
-import com.petworld.dto.order.OrdersDtoResponse;
+import com.petCare.dto.orderDto.request.OrdersDtoRequest;
+import com.petCare.dto.orderDto.response.OrdersDtoResponse;
 
 import java.util.List;
 

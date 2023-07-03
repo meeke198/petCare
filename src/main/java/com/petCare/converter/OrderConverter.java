@@ -1,12 +1,12 @@
 package com.petCare.converter;
 
-import com.petworld.dto.order.OrderDetailDtoResponse;
-import com.petworld.dto.order.OrdersDtoRequest;
-import com.petworld.dto.order.OrdersDtoResponse;
-import com.petworld.dto.userDto.response.UserDtoResponse;
-import com.petworld.entity.Orders;
-import com.petworld.entity.User;
-import com.petworld.repository.UserRepository;
+import com.petCare.dto.orderDto.response.OrderDetailDtoResponse;
+import com.petCare.dto.orderDto.request.OrdersDtoRequest;
+import com.petCare.dto.orderDto.response.OrdersDtoResponse;
+//import com.petCare.dto.userDto.response.UserDtoResponse;
+import com.petCare.entity.Orders;
+import com.petCare.entity.User;
+import com.petCare.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
@@ -17,14 +17,14 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class OrderConverter {
-    private final UserConverter userConverter;
+//    private final UserConverter userConverter;
     private final UserRepository userRepository;
 
 
     public OrdersDtoResponse entityToDto(Orders order){
         OrdersDtoResponse ordersDtoResponse = new OrdersDtoResponse();
         BeanUtils.copyProperties(order, ordersDtoResponse);
-        UserDtoResponse userDtoResponse = userConverter.entityToDto(order.getUser());
+//        UserDtoResponse userDtoResponse = userConverter.entityToDto(order.getUser());
         List< OrderDetailDtoResponse> orderDetailDtoResponses = new ArrayList<>();
         order.getOrderDetails().forEach(element -> {
             OrderDetailDtoResponse orderDetailDtoResponse = new OrderDetailDtoResponse();
@@ -32,7 +32,7 @@ public class OrderConverter {
             orderDetailDtoResponses.add(orderDetailDtoResponse);
         });
         ordersDtoResponse.setOrderDetailDtoResponses(orderDetailDtoResponses);
-        ordersDtoResponse.setUserDtoResponse(userDtoResponse);
+//        ordersDtoResponse.setUserDtoResponse(userDtoResponse);
         return ordersDtoResponse;
     };
 

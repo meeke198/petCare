@@ -1,8 +1,8 @@
 package com.petCare.dto.productDto.response;
 
-import com.petworld.dto.categoryDto.response.CategoryDtoResponse;
-import com.petworld.dto.imagedetailDto.response.ImageDetailsDto;
-import com.petworld.entity.Mark;
+import com.petCare.dto.categoryDto.response.CategoryDtoResponse;
+import com.petCare.dto.imagedetailDto.response.ImageDetailsDto;
+import com.petCare.entity.Mark;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

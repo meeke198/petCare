@@ -1,7 +1,7 @@
 package com.petCare.dto.PackageDetailDto.response;
 
-import com.petworld.dto.packageDetailReviewDto.response.PackageDetailReviewDtoResponse;
-import com.petworld.dto.serviceDto.response.ServiceDtoResponse;
+import com.petCare.dto.packageDetailReviewDto.response.PackageDetailReviewDtoResponse;
+import com.petCare.dto.serviceDto.response.ServiceDtoResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

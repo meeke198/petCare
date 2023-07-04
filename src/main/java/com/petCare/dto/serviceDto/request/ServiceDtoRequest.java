@@ -1,6 +1,6 @@
 package com.petCare.dto.serviceDto.request;
 
-import com.petworld.entity.PackageDetail;
+import com.petCare.entity.PackageDetail;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

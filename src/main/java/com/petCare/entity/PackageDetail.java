@@ -25,13 +25,13 @@ public class PackageDetail {
     private Boolean isActive;
     @Column(name = "status")
     private String status;
-//    @OneToMany(mappedBy = "packageDetail",fetch = FetchType.LAZY)
-//    private List<Service> services;
-//    @OneToMany(mappedBy = "packageDetail",fetch = FetchType.LAZY)
-//    private List<PackageDetailReview> packageDetailReviews;
-//    @ManyToOne(targetEntity = Center.class)
-//    @JoinColumn(name = "center_id", referencedColumnName = "id")
-//    private Center center;
+    @OneToMany(mappedBy = "packageDetail",fetch = FetchType.LAZY)
+    private List<Service> services;
+    @OneToMany(mappedBy = "packageDetail",fetch = FetchType.LAZY)
+    private List<PackageDetailReview> packageDetailReviews;
+    @ManyToOne(targetEntity = Center.class)
+    @JoinColumn(name = "center_id", referencedColumnName = "id")
+    private Center center;
     @ManyToOne(targetEntity = Package.class)
     @JoinColumn(name = "package_id",referencedColumnName = "id")
     private Package servicePackage;

@@ -5,6 +5,7 @@ import com.petCare.dto.userDto.request.UserDtoPassword;
 import com.petCare.dto.userDto.request.UserDtoUpdate;
 import com.petCare.dto.userDto.response.UserDtoResponse;
 import com.petCare.dto.userDto.response.UserDtoResponseDetail;
+import com.petCare.payload.response.checkEmailPassword;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

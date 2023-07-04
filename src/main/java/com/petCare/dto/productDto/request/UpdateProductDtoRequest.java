@@ -1,7 +1,7 @@
 package com.petCare.dto.productDto.request;
 
-import com.petworld.dto.markDto.request.MarkDtoRequest;
-import com.petworld.entity.ImageDetail;
+import com.petCare.dto.markDto.request.MarkDtoRequest;
+import com.petCare.entity.ImageDetail;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

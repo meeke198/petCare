@@ -1,6 +1,5 @@
 package com.petCare.entity;
 
-import jdk.vm.ci.code.site.Mark;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,17 +34,18 @@ public class Product {
     private String animal;
     private Integer sale;
     private Boolean status;
-//    @OneToOne
-//    @JoinColumn(name = "mark_id", referencedColumnName = "id")
-//    private Mark mark;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "category_id",referencedColumnName = "id")
-//    private Category category;
+    @OneToOne
+    @JoinColumn(name = "mark_id", referencedColumnName = "id")
+    private Mark mark;
 
-//    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-//    private List<ImageDetail> imageDetails;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id",referencedColumnName = "id")
+    private Category category;
 
-//    @OneToMany(mappedBy = "product",fetch = FetchType.LAZY)
-//    private Set<FavoriteProduct> favoriteProducts;
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    private List<ImageDetail> imageDetails;
+
+    @OneToMany(mappedBy = "product",fetch = FetchType.LAZY)
+    private Set<FavoriteProduct> favoriteProducts;
 }

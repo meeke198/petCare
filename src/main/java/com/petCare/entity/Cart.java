@@ -29,10 +29,10 @@ public class Cart {
     @Column(name = "cart_date")
     private Date cartDate;
 
-//    @OneToMany(mappedBy = "cart", fetch = FetchType.LAZY)
-//    private List<CartDetail> cartDetailList;
+    @OneToMany(mappedBy = "cart", fetch = FetchType.LAZY)
+    private List<CartDetail> cartDetailList;
 
-//    @OneToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "user_id")
-//    private User user;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 }

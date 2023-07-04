@@ -1,6 +1,6 @@
 package com.petCare.service;
 
-import com.petworld.dto.categoryDto.response.CategoryDtoResponse;
+import com.petCare.dto.categoryDto.response.CategoryDtoResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

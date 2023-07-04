@@ -2,7 +2,6 @@ package com.petCare.service;
 
 import com.petCare.dto.cartDto.request.CartDetailDtoRequest;
 import com.petCare.dto.cartDto.response.CartDetailDtoResponse;
-
 import java.util.List;
 
 public interface CartService {

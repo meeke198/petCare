@@ -1,6 +1,6 @@
 package com.petCare.dto.serviceDto.response;
 
-import com.petworld.dto.serviceImageDto.response.ServiceImageDtoResponse;
+import com.petCare.dto.serviceImageDto.response.ServiceImageDtoResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,7 +1,6 @@
 package com.petCare.dto.categoryDto.response;
 
 import com.petCare.dto.productDto.response.ProductDtoResponse;
-import com.petCare.dto.productDto.response.ProductDtoResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

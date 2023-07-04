@@ -1,9 +1,9 @@
 package com.petCare.converter;
 
-import com.petworld.dto.order.OrderDetailDtoRequest;
-import com.petworld.dto.order.OrderDetailDtoResponse;
-import com.petworld.dto.order.OrdersDtoResponse;
-import com.petworld.entity.OrderDetail;
+import com.petCare.dto.orderDto.request.OrderDetailDtoRequest;
+import com.petCare.dto.orderDto.response.OrderDetailDtoResponse;
+import com.petCare.dto.orderDto.response.OrdersDtoResponse;
+import com.petCare.entity.OrderDetail;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;

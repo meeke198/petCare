@@ -1,7 +1,7 @@
-package com.petworld.service;
+package com.petCare.service;
 
-import com.petworld.dto.sellerDto.request.SellerDtoRequest;
-import com.petworld.dto.sellerDto.response.SellerDtoResponse;
+import com.petCare.dto.sellerDto.request.SellerDtoRequest;
+import com.petCare.dto.sellerDto.response.SellerDtoResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

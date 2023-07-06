@@ -1,13 +1,13 @@
-package com.petworld.service.impl;
+package com.petCare.service.impl;
 
-import com.petworld.converter.SellerConverter;
-import com.petworld.entity.Center;
-import com.petworld.entity.Seller;
-import com.petworld.dto.sellerDto.request.SellerDtoRequest;
-import com.petworld.dto.sellerDto.response.SellerDtoResponse;
-import com.petworld.repository.CenterRepository;
-import com.petworld.repository.SellerRepository;
-import com.petworld.service.SellerService;
+import com.petCare.converter.SellerConverter;
+import com.petCare.dto.sellerDto.request.SellerDtoRequest;
+import com.petCare.dto.sellerDto.response.SellerDtoResponse;
+import com.petCare.entity.Center;
+import com.petCare.entity.Seller;
+import com.petCare.repository.CenterRepository;
+import com.petCare.repository.SellerRepository;
+import com.petCare.service.SellerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

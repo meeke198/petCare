@@ -1,14 +1,14 @@
-package com.petworld.controller.controller_FE_SF;
+package com.petCare.controller.controller_FE_SF;
 
-import com.petworld.dto.userDto.request.UserDtoPassword;
-import com.petworld.dto.userDto.request.UserDtoUpdate;
-import com.petworld.dto.userDto.response.UserDtoResponse;
-import com.petworld.dto.userDto.response.UserDtoResponseDetail;
-import com.petworld.payload.request.SearchRequest;
-import com.petworld.security.JwtAuthFilter;
-import com.petworld.security.JwtTokenProvider;
-import com.petworld.service.SecurityService;
-import com.petworld.service.UserService;
+import com.petCare.dto.userDto.request.UserDtoPassword;
+import com.petCare.dto.userDto.request.UserDtoUpdate;
+import com.petCare.dto.userDto.response.UserDtoResponse;
+import com.petCare.dto.userDto.response.UserDtoResponseDetail;
+import com.petCare.payload.request.SearchRequest;
+import com.petCare.security.JwtAuthFilter;
+import com.petCare.security.JwtTokenProvider;
+import com.petCare.service.SecurityService;
+import com.petCare.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

@@ -1,8 +1,8 @@
-package com.petworld.converter;
+package com.petCare.converter;
 
-import com.petworld.entity.Seller;
-import com.petworld.dto.sellerDto.request.SellerDtoRequest;
-import com.petworld.dto.sellerDto.response.SellerDtoResponse;
+import com.petCare.dto.sellerDto.request.SellerDtoRequest;
+import com.petCare.dto.sellerDto.response.SellerDtoResponse;
+import com.petCare.entity.Seller;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

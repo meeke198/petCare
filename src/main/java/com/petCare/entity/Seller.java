@@ -1,4 +1,4 @@
-package com.petworld.entity;
+package com.petCare.entity;
 
 
 import lombok.AllArgsConstructor;

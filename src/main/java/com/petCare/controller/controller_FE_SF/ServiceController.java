@@ -1,10 +1,9 @@
-package com.petworld.controller.controller_FE_SF;
+package com.petCare.controller.controller_FE_SF;
 
-import com.petworld.dto.centerDto.response.CenterDtoResponse;
-import com.petworld.entity.Service;
-import com.petworld.dto.serviceDto.request.ServiceDtoRequest;
-import com.petworld.dto.serviceDto.response.ServiceDtoResponse;
-import com.petworld.service.ServiceService;
+import com.petCare.dto.serviceDto.request.ServiceDtoRequest;
+import com.petCare.dto.serviceDto.response.ServiceDtoResponse;
+import com.petCare.entity.Service;
+import com.petCare.service.ServiceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

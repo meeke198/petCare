@@ -1,4 +1,4 @@
-package com.petworld.dto.sellerDto.response;
+package com.petCare.dto.sellerDto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

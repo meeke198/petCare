@@ -1,7 +1,7 @@
 package com.petCare.converter;
 
-import com.petCare.dto.imagedetailDto.request.UpdateImageDetailDto;
-import com.petCare.dto.imagedetailDto.response.ImageDetailsDto;
+import com.petCare.dto.imageDetailDto.request.UpdateImageDetailDto;
+import com.petCare.dto.imageDetailDto.response.ImageDetailsDto;
 import com.petCare.entity.ImageDetail;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;

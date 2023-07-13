@@ -1,6 +1,6 @@
 package com.petCare.dto.imageDetailDto.response;
 
-import com.petworld.entity.Product;
+import com.petCare.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

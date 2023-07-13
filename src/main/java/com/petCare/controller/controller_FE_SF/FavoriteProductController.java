@@ -34,13 +34,13 @@ public class FavoriteProductController {
         return ResponseEntity.created(uri).body(favoriteProductService.add(newFavoriteProduct.get()));
 
     }
-    //    @DeleteMapping("/{id}")
-//    public ResponseEntity<?> delete(@PathVariable(name = "id") Long id){
-//        Optional<FavoriteProductDtoResponse> favoriteProduct = favoriteProductService.getById(id);
-//        if(favoriteProduct.isEmpty()) return ResponseEntity.notFound().build();
-//        favoriteProductService.delete(id);
-//        return ResponseEntity.ok().body(favoriteProduct);
-//    }
+        @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable(name = "id") Long id){
+        Optional<FavoriteProductDtoResponse> favoriteProduct = favoriteProductService.getById(id);
+        if(favoriteProduct.isEmpty()) return ResponseEntity.notFound().build();
+        favoriteProductService.delete(id);
+        return ResponseEntity.ok().body(favoriteProduct);
+    }
     @DeleteMapping("")
     public void delete(@RequestBody FavoriteProductDtoRequest favoriteProductDtoRequest){
         favoriteProductService.deleteByUserIdAndProductId(favoriteProductDtoRequest.getUserId(),favoriteProductDtoRequest.getProductId());

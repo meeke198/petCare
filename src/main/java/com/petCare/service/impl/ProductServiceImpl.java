@@ -3,7 +3,6 @@ package com.petCare.service.impl;
 import com.petCare.converter.CategoryConverter;
 //import com.petCare.converter.ImageDetailsConverter;
 import com.petCare.converter.ProductConverter;
-import com.petCare.dto.categoryDto.response.CategoryDtoResponse;
 import com.petCare.dto.productDto.request.ProductDtoRequest;
 import com.petCare.dto.productDto.request.UpdateProductDtoRequest;
 import com.petCare.dto.productDto.response.ProductDetailDtoResponse;
@@ -37,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<ProductDtoResponse> getAllProducts(List<Long> categoryIds, Pageable pageable) {
         Page<Product> products;
-        if (categoryIds.isEmpty()) {
+        if (categoryIds == null) {
 
             products = productRepository.getAllProducts(pageable);
         } else {
@@ -49,6 +48,9 @@ public class ProductServiceImpl implements ProductService {
         }
         return null;
     }
+
+
+
 
     @Override
     public ProductDetailDtoResponse findById(Long id) {
@@ -108,8 +110,9 @@ public class ProductServiceImpl implements ProductService {
         if (!products.isEmpty()) {
             Page<ProductDtoResponse> productDtoResponses = productConverter.entitiesToDtos(products);
             return productDtoResponses;
+        } else {
+            return null;
         }
-        return null;
     }
 
     @Override
@@ -121,5 +124,32 @@ public class ProductServiceImpl implements ProductService {
             productDtoResponses.add(productDtoResponse);
         }
         return productDtoResponses;
+    }
+
+    @Override
+    public Page<ProductDtoResponse> searchAllProductsByNameAndDescription(String query, Pageable pageable) {
+//        Page<Product> products;
+//        Page<ProductDtoResponse> productsResponseDtos = null;
+//        if (query.isEmpty()) {
+//            products = productRepository.getAllProductBo(pageable);
+//            if(!products.isEmpty()){
+//                productsResponseDtos = productConverter.entitiesToDtos(products);
+//            }
+//        } else {
+//            productsResponseDtos = productRepository.searchAllProductsByNameAndDescription(query, pageable);
+//        }
+//        return productsResponseDtos;
+        Page<Product> products;
+        if (query.isEmpty()) {
+
+            products = productRepository.getAllProducts(pageable);
+        } else {
+            products = productRepository.searchAllProductsByNameAndDescription(query, pageable);
+        }
+        if (!products.isEmpty()) {
+            Page<ProductDtoResponse> productDtoResponses = productConverter.entitiesToDtos(products);
+            return productDtoResponses;
+        }
+        return null;
     }
 }

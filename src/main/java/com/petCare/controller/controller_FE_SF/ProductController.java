@@ -1,5 +1,6 @@
 package com.petCare.controller.controller_FE_SF;
 
+import com.petCare.dto.categoryDto.response.CategoryDtoResponse;
 import com.petCare.dto.productDto.request.ProductDtoRequest;
 import com.petCare.dto.productDto.request.UpdateProductDtoRequest;
 import com.petCare.dto.productDto.response.ProductDetailDtoResponse;
@@ -22,11 +23,24 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+//    @GetMapping("")
+//    public ResponseEntity<?> getAllProducts(@PageableDefault(size = 9) Pageable pageable,
+//                                            @RequestParam(required = false) List<Long> categoryIds) {
+//        System.out.println(categoryIds);
+//        Page<ProductDtoResponse> productDtoResponses = productService.getAllProducts(categoryIds, pageable);
+//        return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
+//    }
     @GetMapping("")
     public ResponseEntity<?> getAllProducts(@PageableDefault(size = 9) Pageable pageable,
                                             @RequestParam(required = false) List<Long> categoryIds) {
         System.out.println(categoryIds);
         Page<ProductDtoResponse> productDtoResponses = productService.getAllProducts(categoryIds, pageable);
+        return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllProductBo(Pageable pageable) {
+        Page<ProductDtoResponse> productDtoResponses = productService.getAllProductBo(pageable);
         return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
     }
 
@@ -60,4 +74,14 @@ public class ProductController {
         ProductDetailDtoResponse productDetailDtoResponse = productService.updateProductById(id, updateProductDtoRequest);
         return new ResponseEntity<>(productDetailDtoResponse, HttpStatus.OK);
     }
+
+
+    @GetMapping("/search")
+    public ResponseEntity<?> searchAllProducts(Pageable pageable,
+                                            @RequestParam String query) {
+        System.out.println(query);
+        Page<ProductDtoResponse> productDtoResponses = productService.searchAllProductsByNameAndDescription(query, pageable);
+        return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
+    }
+
 }

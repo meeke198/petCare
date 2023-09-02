@@ -1,6 +1,7 @@
 package com.petCare.repository;
 
 
+import com.petCare.dto.productDto.response.ProductDtoResponse;
 import com.petCare.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +34,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query( value = "select p from Product p where p.name Like %:name%")
     List<Product> findProductByName(String name);
-
-
+    @Query("SELECT p FROM Product p WHERE LOWER(p.name) LIKE LOWER(CONCAT('%', :query, '%')) OR LOWER(p.description) LIKE LOWER(CONCAT('%', :query, '%'))")
+    Page<Product> searchAllProductsByNameAndDescription(@Param("query") String query, Pageable pageable);
 }

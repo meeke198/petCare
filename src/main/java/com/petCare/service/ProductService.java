@@ -14,6 +14,9 @@ public interface ProductService {
 //    Page<ProductDtoResponse> getAllProducts(Pageable pageable);
 //    Page<Product> getAllProducts(Pageable pageable)
     Page<ProductDtoResponse> getAllProducts(List<Long> categoryIds, Pageable pageable);
+//    Page<ProductDtoResponse> getAllProducts(Pageable pageable);
+
+    Page<ProductDtoResponse> searchAllProductsByNameAndDescription(String query, Pageable pageable);
 
     ProductDetailDtoResponse findById(Long id);
     void addProduct(ProductDtoRequest productDtoRequest);

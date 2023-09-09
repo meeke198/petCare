@@ -3,14 +3,15 @@ package com.petCare.service.impl;
 import com.petCare.converter.CategoryConverter;
 //import com.petCare.converter.ImageDetailsConverter;
 import com.petCare.converter.ProductConverter;
+import com.petCare.dto.categoryDto.response.CategoryDtoResponse;
 import com.petCare.dto.productDto.request.ProductDtoRequest;
 import com.petCare.dto.productDto.request.UpdateProductDtoRequest;
 import com.petCare.dto.productDto.response.ProductDetailDtoResponse;
 import com.petCare.dto.productDto.response.ProductDtoResponse;
 import com.petCare.entity.Product;
 import com.petCare.repository.CategoryRepository;
-//import com.petCare.repository.ImageDetailRepository;
-//import com.petCare.repository.MarkRepository;
+import com.petCare.repository.ImageDetailRepository;
+import com.petCare.repository.MarkRepository;
 import com.petCare.repository.ProductRepository;
 import com.petCare.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +28,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final ProductConverter productConverter;
-    private final CategoryRepository categoryRepository;
+//    private final CategoryRepository categoryRepository;
 //    private final ImageDetailRepository imageDetailRepository;
     private final CategoryConverter categoryConverter;
 //    private final MarkRepository markRepository;
@@ -36,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<ProductDtoResponse> getAllProducts(List<Long> categoryIds, Pageable pageable) {
         Page<Product> products;
-        if (categoryIds == null) {
+        if (categoryIds.isEmpty()) {
 
             products = productRepository.getAllProducts(pageable);
         } else {
@@ -49,17 +50,14 @@ public class ProductServiceImpl implements ProductService {
         return null;
     }
 
-
-
-
     @Override
     public ProductDetailDtoResponse findById(Long id) {
         Product product = productRepository.findById(id).get();
         if (product != null) {
             ProductDetailDtoResponse productDetailDtoResponse = productConverter.entityToProductDetailDto(product);
-//            CategoryDtoResponse categoryDtoResponse = categoryConverter.entityToDto(product.getCategory());
+            CategoryDtoResponse categoryDtoResponse = categoryConverter.entityToDto(product.getCategory());
 
-//            productDetailDtoResponse.setCategoryDtoResponse(categoryDtoResponse);
+            productDetailDtoResponse.setCategoryDtoResponse(categoryDtoResponse);
             return productDetailDtoResponse;
         }
         return null;
@@ -73,7 +71,7 @@ public class ProductServiceImpl implements ProductService {
 //            product.setCategory(categoryRepository.findById(productDtoRequest.getCategoryId()).get());
             productRepository.save(product);
             productDtoRequest.getImageDetail().forEach(element -> {
-//                element.setProduct(product);
+                element.setProduct(product);
 //                imageDetailRepository.save(element);
             });
 
@@ -91,10 +89,10 @@ public class ProductServiceImpl implements ProductService {
     public ProductDetailDtoResponse updateProductById(Long id, UpdateProductDtoRequest updateProductDtoRequest) {
         Product product = productRepository.findById(id).orElse(null);
         product = productConverter.dtoToEntity(updateProductDtoRequest, product);
-//        product.setImageDetails(updateProductDtoRequest.getImageDetailList());
+        product.setImageDetails(updateProductDtoRequest.getImageDetailList());
         Product finalProduct = product;
         updateProductDtoRequest.getImageDetailList().forEach(imageDetail -> {
-//            imageDetail.setProduct(finalProduct);
+            imageDetail.setProduct(finalProduct);
 //            imageDetailRepository.save(imageDetail);
         });
         productRepository.save(product);
@@ -110,9 +108,8 @@ public class ProductServiceImpl implements ProductService {
         if (!products.isEmpty()) {
             Page<ProductDtoResponse> productDtoResponses = productConverter.entitiesToDtos(products);
             return productDtoResponses;
-        } else {
-            return null;
         }
+        return null;
     }
 
     @Override

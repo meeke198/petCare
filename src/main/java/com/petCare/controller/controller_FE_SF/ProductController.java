@@ -23,13 +23,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
-//    @GetMapping("")
-//    public ResponseEntity<?> getAllProducts(@PageableDefault(size = 9) Pageable pageable,
-//                                            @RequestParam(required = false) List<Long> categoryIds) {
-//        System.out.println(categoryIds);
-//        Page<ProductDtoResponse> productDtoResponses = productService.getAllProducts(categoryIds, pageable);
-//        return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
-//    }
     @GetMapping("")
     public ResponseEntity<?> getAllProducts(@PageableDefault(size = 9) Pageable pageable,
                                             @RequestParam(required = false) List<Long> categoryIds) {
@@ -37,6 +30,13 @@ public class ProductController {
         Page<ProductDtoResponse> productDtoResponses = productService.getAllProducts(categoryIds, pageable);
         return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
     }
+//    @GetMapping("/categories")
+//    public ResponseEntity<?> getAllProducts(@PageableDefault(size = 9) Pageable pageable,
+//                                            @RequestParam(required = false) List<Long> categoryIds) {
+//        System.out.println(categoryIds);
+//        Page<ProductDtoResponse> productDtoResponses = productService.getAllProducts(categoryIds, pageable);
+//        return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
+//    }
 
     @GetMapping("/all")
     public ResponseEntity<?> getAllProductBo(Pageable pageable) {
@@ -80,8 +80,12 @@ public class ProductController {
     public ResponseEntity<?> searchAllProducts(Pageable pageable,
                                             @RequestParam String query) {
         System.out.println(query);
-        Page<ProductDtoResponse> productDtoResponses = productService.searchAllProductsByNameAndDescription(query, pageable);
+        Page<ProductDtoResponse> productDtoResponses;
+        if(query.isEmpty()){
+           productDtoResponses = productService.getAllProductBo(pageable);
+        } else {
+            productDtoResponses = productService.searchAllProductsByNameAndDescription(query, pageable);
+        }
         return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
     }
-
 }

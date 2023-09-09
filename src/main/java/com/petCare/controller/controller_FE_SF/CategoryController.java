@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/categorys")
+@RequestMapping("api/categories")
 @CrossOrigin("*")
 public class CategoryController {
     private final CategoryService categoryService;

@@ -1,9 +1,14 @@
+
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.11'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
-
+build.mustRunAfter clean
+bootJar {
+	archiveBaseName = 'petCare'
+	archiveVersion = '0.0.1'
+}
 group = 'com.'
 version = '0.0.1-SNAPSHOT'
 

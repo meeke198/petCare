@@ -67,7 +67,7 @@ public class SecurityConfiguration {
         corsConfig.addAllowedHeader("*");
         corsConfig.addAllowedMethod("*");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("https://pet-world-a2c2979cf3b7.herokuapp.com/**", corsConfig);
+        source.registerCorsConfiguration("/**", corsConfig);
         return source;
     }
 

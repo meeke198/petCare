@@ -87,7 +87,7 @@ public class SecurityConfiguration {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.authorizeHttpRequests() // links start with /api/
-                .antMatchers("/api/auth/**","/api/products/**","/api/package-details/**", "/api/categories/**",
+                .antMatchers("/public/**","/api/auth/**","/api/products/**","/api/package-details/**", "/api/categories/**",
                         "/api/orders/**","/api/favorite-products/**","/api/favorites/**","/api/cart/**")// perform segregate authorize
                 .permitAll();
 

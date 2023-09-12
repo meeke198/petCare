@@ -37,9 +37,8 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<ProductDtoResponse> getAllProducts(List<Long> categoryIds, Pageable pageable) {
         Page<Product> products;
-        if (categoryIds.isEmpty()) {
-
-            products = productRepository.getAllProducts(pageable);
+        if (categoryIds == null) {
+            products = productRepository.getAllProductBo(pageable);
         } else {
             products = productRepository.findByCategoryIds(categoryIds, pageable);
         }
@@ -139,7 +138,7 @@ public class ProductServiceImpl implements ProductService {
         Page<Product> products;
         if (query.isEmpty()) {
 
-            products = productRepository.getAllProducts(pageable);
+            products = productRepository.getAllProductBo(pageable);
         } else {
             products = productRepository.searchAllProductsByNameAndDescription(query, pageable);
         }

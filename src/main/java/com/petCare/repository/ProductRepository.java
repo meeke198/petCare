@@ -19,7 +19,7 @@ import java.util.List;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query( value = "select p from Product p where p.status = true ")
-    Page<Product> getAllProducts(Pageable pageable);
+    Page<Product> getAllProducts(List<Long> categoryIds, Pageable pageable);
 
     @Query("select p from Product p where p.category.id in (:id) and p.status = true")
     Page<Product> findByCategoryIds(@Param("id") List<Long> categoryIds, Pageable pageable);

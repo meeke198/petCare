@@ -35,6 +35,7 @@ public class AuthController {
 
     @PostMapping
     public ResponseEntity<?> create(@Validated @RequestBody UserDtoCreateRequest userDtoCreateRequest) {
+//        public ResponseEntity<?> create(@RequestBody UserDtoCreateRequest userDtoCreateRequest) {
         checkEmailPassword checkEmailPassword = userService.save(userDtoCreateRequest);
         if (checkEmailPassword == null) {
             return new ResponseEntity<>(null, HttpStatus.OK);

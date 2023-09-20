@@ -21,7 +21,7 @@ public interface PackageRepository extends JpaRepository<Package,Long> {
     Page<Package> findPackagesByName(String name, Pageable pageable);
 
     Optional<Package> findPackageByName(String name);
-    Package findPackageById(Long id);
+    Optional<Package> findPackageById(Long id);
 
     @Override
     Page<Package> findAll(Pageable pageable);

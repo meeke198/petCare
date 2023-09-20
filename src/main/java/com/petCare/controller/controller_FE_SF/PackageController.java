@@ -30,7 +30,7 @@ public class PackageController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Optional<PackageDtoResponse>> getPackage(@PathVariable("id") Long id){
-        Optional<PackageDtoResponse> servicePackage = packageService.getPackage(id);
+        Optional<PackageDtoResponse> servicePackage = packageService.findPackageById(id);
         if(servicePackage.isEmpty()) return ResponseEntity.notFound().build();
         return ResponseEntity.ok().body(servicePackage);
     }
@@ -43,7 +43,7 @@ public class PackageController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updatePackage(@RequestBody PackageDtoRequest servicePackage){
-        Optional<PackageDtoResponse> editedPackage = packageService.getPackage(servicePackage.getId());
+        Optional<PackageDtoResponse> editedPackage = packageService.findPackageById(servicePackage.getId());
         if(editedPackage.isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
@@ -53,12 +53,12 @@ public class PackageController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deletePackage(@PathVariable("id") Long id){
-        Optional<PackageDtoResponse> deletePackage = packageService.getPackage(id);
+        Optional<PackageDtoResponse> deletePackage = packageService.findPackageById(id);
         if(deletePackage.isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
             packageService.deleteByIdByStatus(id);
-            return ResponseEntity.ok().body(packageService.getPackage(id));
+            return ResponseEntity.ok().body(packageService.findPackageById(id));
         }
     }
 }

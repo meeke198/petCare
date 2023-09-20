@@ -1,5 +1,6 @@
 package com.petCare.service.impl;
 
+import com.petCare.service.PackageDetailService;
 import com.petCare.converter.PackageDetailConverter;
 import com.petCare.dto.PackageDetailDto.request.PackageDetailDtoRequest;
 import com.petCare.dto.PackageDetailDto.response.PackageDetailDtoResponse;
@@ -62,12 +63,12 @@ public class PackageDetailServiceImpl implements PackageDetailService {
     @Override
     public Page<PackageDetailDtoResponse> findAll(Pageable pageable) {
         Page<PackageDetail> packageDetails = packageDetailRepository.findAll(pageable);
-       return packageDetails.map(packageDetailConverter::entityToDto);
+        return packageDetails.map(packageDetailConverter::entityToDto);
     }
 
     @Override
-    public Page<PackageDetailDtoResponse> findPackageDetailByPackageName(String name,Pageable pageable) {
-        Page<PackageDetail> packageDetails = packageDetailRepository.findPackageDetailsByServicePackageName(name,pageable);
+    public Page<PackageDetailDtoResponse> findPackageDetailByPackageId(Long packageId,Pageable pageable) {
+        Page<PackageDetail> packageDetails = packageDetailRepository.findPackageDetailsByServicePackageId(packageId,pageable);
         return packageDetails.map(packageDetailConverter::entityToDto);
     }
 }

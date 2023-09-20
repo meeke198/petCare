@@ -73,9 +73,9 @@ public class PackageDetailController {
         }
     }
 
-    @GetMapping("/search/{name}")
-    public ResponseEntity<?> getAllPackageDetailByPackageName(@PathVariable("name") String name,Pageable pageable){
-        Page<PackageDetailDtoResponse> packageDetailDtoResponses = packageDetailService.findPackageDetailByPackageName(name,pageable);
+    @GetMapping("/search/{packageId}")
+    public ResponseEntity<?> getAllPackageDetailByPackageName(@PathVariable("packageId") Long packageId,Pageable pageable){
+        Page<PackageDetailDtoResponse> packageDetailDtoResponses = packageDetailService.findPackageDetailByPackageId(packageId,pageable);
         if (packageDetailDtoResponses.isEmpty()) return ResponseEntity.notFound().build();
         return ResponseEntity.ok().body(packageDetailDtoResponses);
     }

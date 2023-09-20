@@ -42,11 +42,11 @@ public class ProductServiceImpl implements ProductService {
         } else {
             products = productRepository.findByCategoryIds(categoryIds, pageable);
         }
-        if (!products.isEmpty()) {
+//        if (!products.isEmpty()) {
             Page<ProductDtoResponse> productDtoResponses = productConverter.entitiesToDtos(products);
             return productDtoResponses;
-        }
-        return null;
+//        }
+//        return null;
     }
 
     @Override

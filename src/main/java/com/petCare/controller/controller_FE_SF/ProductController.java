@@ -31,7 +31,7 @@ public class ProductController {
         return new ResponseEntity<>(productDtoResponses, HttpStatus.OK);
     }
 //    @GetMapping("/categories")
-//    public ResponseEntity<?> getAllProducts(@PageableDefault(size = 9) Pageable pageable,
+//    public ResponseEntity<?> getAllProductsByCategories(@PageableDefault(size = 9) Pageable pageable,
 //                                            @RequestParam(required = false) List<Long> categoryIds) {
 //        System.out.println(categoryIds);
 //        Page<ProductDtoResponse> productDtoResponses = productService.getAllProducts(categoryIds, pageable);

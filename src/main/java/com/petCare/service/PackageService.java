@@ -12,7 +12,7 @@ public interface PackageService {
     PackageDtoResponse savePackage(PackageDtoRequest packageDtoRequest);
 
     void deleteByIdByStatus(Long id);
-    Optional<PackageDtoResponse> getPackage(Long id);
+    Optional<PackageDtoResponse> findPackageById(Long id);
 
     Page<PackageDtoResponse> findAll(Pageable pageable);
 }

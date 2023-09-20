@@ -18,5 +18,5 @@ public interface PackageDetailService {
 
     Page<PackageDetailDtoResponse> findAll(Pageable pageable);
 
-    Page<PackageDetailDtoResponse> findPackageDetailByPackageName(String name,Pageable pageable);
+    Page<PackageDetailDtoResponse> findPackageDetailByPackageId(Long packageId,Pageable pageable);
 }

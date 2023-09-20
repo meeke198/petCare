@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,5 +24,6 @@ public class Package {
     private List<PackageDetail> packageDetails;
 
     @Column(name = "is_active")
+    @ColumnDefault("true")
     private Boolean isActive;
 }
